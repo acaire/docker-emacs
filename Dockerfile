@@ -8,6 +8,7 @@ RUN apt-get update \
   && apt-get install \
     -y \
     --no-install-recommends \
+      ca-certificates \
       emacs \
       git \
       openssl \
@@ -15,7 +16,6 @@ RUN apt-get update \
       texlive-latex-base \
       texlive-latex-extra \
     && rm -rf /var/cache/apt/lists
-RUN apt-get update && apt-get install -y ca-certificates
 RUN git clone https://github.com/hlissner/doom-emacs ~/.emacs.d \
     && ~/.emacs.d/bin/doom install --env --fonts --hooks -!
 
