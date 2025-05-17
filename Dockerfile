@@ -17,6 +17,7 @@ RUN apt-get update \
       ca-certificates \
       emacs \
       git \
+      latexmk \
       openssl \
       texlive-bibtex-extra \
       texlive-fonts-extra \
@@ -41,7 +42,8 @@ RUN <<EOF cat >> /root/.doom.d/config.el
         org-ref-default-citation-link 'parencite
         org-latex-prefer-user-labels t
         org-latex-src-block-backend 'engraved
-        org-latex-with-hyperref nil))
+        org-latex-with-hyperref nil
+        org-latex-pdf-process '("latexmk -pdflatex=pdflatex -f -pdf -interaction=nonstopmode -output-directory=%o %f")))
 EOF
 
 RUN ~/.emacs.d/bin/doom sync
