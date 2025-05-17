@@ -6,6 +6,8 @@ ADD https://github.com/citation-style-language/styles/blob/c7de5bedd4caf9c2ce193
   # biblatex.sty
 # texlive-plain-generic provides:
   # ulem.sty
+# texlive-science provides:
+  # fourier.sty
 RUN apt-get update \
   && apt-get install \
     -y \
@@ -18,6 +20,7 @@ RUN apt-get update \
       texlive-latex-base \
       texlive-latex-extra \
       texlive-plain-generic \
+      texlive-science \
     && rm -rf /var/cache/apt/lists
 RUN git clone https://github.com/hlissner/doom-emacs ~/.emacs.d \
     && ~/.emacs.d/bin/doom install --env --fonts --hooks -!
