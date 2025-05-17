@@ -26,6 +26,17 @@ RUN git clone https://github.com/hlissner/doom-emacs ~/.emacs.d \
 RUN <<EOF cat >> /root/.doom.d/packages.el
 (package! org-ref)
 EOF
+RUN <<EOF cat >> /root/.doom.d/config.el
+(use-package! org-ref
+  :after org
+  :defer t
+  :config
+  (setq bibtex-dialect 'biblatex
+        org-ref-default-citation-link 'parencite
+        org-latex-prefer-user-labels t
+        org-latex-src-block-backend 'engraved
+        org-latex-with-hyperref nil))
+EOF
 
 RUN ~/.emacs.d/bin/doom sync
 
