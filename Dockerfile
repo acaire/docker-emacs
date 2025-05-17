@@ -1,13 +1,13 @@
 FROM ubuntu:24.04
-ADD https://github.com/citation-style-language/styles/blob/c7de5bedd4caf9c2ce193e4ccc536f8b5899707b/apa.csl /root/apa/apa.csl
+ADD https://raw.githubusercontent.com/citation-style-language/styles/c7de5bedd4caf9c2ce193e4ccc536f8b5899707b/apa.csl /root/apa/apa.csl
+# texlive-fonts-extra provides:
+  # fourier.sty
 # texlive-latex-base provides:
   # wrapfig.sty
 # texlive-latex-extra provides:
   # biblatex.sty
 # texlive-plain-generic provides:
   # ulem.sty
-# texlive-fonts-extra provides:
-  # fourier.sty
 # texlive-science provides:
   # siunitx.sty
 RUN apt-get update \
