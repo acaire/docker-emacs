@@ -6,8 +6,10 @@ ADD https://github.com/citation-style-language/styles/blob/c7de5bedd4caf9c2ce193
   # biblatex.sty
 # texlive-plain-generic provides:
   # ulem.sty
-# texlive-science provides:
+# texlive-fonts-extra provides:
   # fourier.sty
+# texlive-science provides:
+  # siunitx.sty
 RUN apt-get update \
   && apt-get install \
     -y \
@@ -17,6 +19,7 @@ RUN apt-get update \
       git \
       openssl \
       texlive-bibtex-extra \
+      texlive-fonts-extra \
       texlive-latex-base \
       texlive-latex-extra \
       texlive-plain-generic \
