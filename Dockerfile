@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 ADD https://raw.githubusercontent.com/citation-style-language/styles/c7de5bedd4caf9c2ce193e4ccc536f8b5899707b/apa.csl /root/apa/apa.csl
 # texlive-fonts-extra provides:
   # fourier.sty
